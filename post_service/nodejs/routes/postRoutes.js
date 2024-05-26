@@ -1,18 +1,18 @@
 const express = require('express');
 const router = express.Router();
+const postController = require('../controllers/postController');
 
 module.exports = (client, dbName) => {
-  router.get('/', async (req, res) => {
-    const db = client.db(dbName);
-    const posts = await db.collection('posts').find().toArray();
-    res.json(posts);
-  });
+    router.use((req, res, next) => {
+        req.db = client.db(dbName);
+        next();
+    });
 
-  router.post('/', async (req, res) => {
-    const db = client.db(dbName);
-    await db.collection('posts').insertOne(req.body);
-    res.status(201).send('Post created');
-  });
+    router.post('/', postController.createPost);
+    router.get('/', postController.getAllPosts);
+    router.get('/:id', postController.getPostById);
+    router.post('/:id/comments', postController.addComment);
 
-  return router;
+    return router;
 };
+

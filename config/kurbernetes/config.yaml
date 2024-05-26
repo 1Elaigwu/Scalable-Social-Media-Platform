@@ -1,0 +1,57 @@
+apiVersapiVersapiVersion: v1
+kind: Config
+clusters:
+- name: my-cluster
+  cluster:
+    server: https://localhost:6443
+    certificate-authority-data: |
+      -----BEGIN CERTIFICATE-----
+      <your-certificate-authority-data>
+      -----END CERTIFICATE-----
+contexts:
+- name: my-context
+  context:
+    cluster: my-cluster
+    user: your-user
+users:
+- name: your-user
+  user:
+    client-certificate-data: |
+      -----BEGIN CERTIFICATE-----
+      <your-client-certificate-data>
+      -----END CERTIFICATE-----
+    client-key-data: |
+      -----BEGIN RSA PRIVATE KEY-----
+      <your-client-key-data>
+      -----END RSA PRIVATE KEY-----
+current-context: my-context
+ion: v1
+kind: Config
+clusters:
+- name: my-cluster
+  cluster:
+    server: https://your-cluster-api-server
+    certificate-authority-data: |
+      -----BEGIN CERTIFICATE-----
+      <your-certificate-authority-data>
+      -----END CERTIFICATE-----
+contexts:
+- name: my-context
+  context:
+    cluster: my-cluster
+    user: your-user
+users:
+- name: your-user
+  user:
+    client-certificate-data: |
+      -----BEGIN CERTIFICATE-----
+      <your-clclusters:
+- name: my-cluster
+  cluster:
+    server: https://your-cluster-api-server
+    certificate-authority-data: your-certificate-authority-data
+contexts:
+- name: my-context
+  context:
+    cluster: my-cluster
+    use

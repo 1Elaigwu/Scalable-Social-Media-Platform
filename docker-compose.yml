@@ -8,7 +8,10 @@ services:
     ports:
       - "3000:3000"
     depends_on:
+      - postgres
       - mongo
+      - redis
+      - elasticsearch
 
   user_service_python:
     build:
@@ -17,7 +20,10 @@ services:
     ports:
       - "5000:5000"
     depends_on:
+      - postgres
       - mongo
+      - redis
+      - elasticsearch
 
   post_service_nodejs:
     build:
@@ -26,7 +32,10 @@ services:
     ports:
       - "3001:3001"
     depends_on:
+      - postgres
       - mongo
+      - redis
+      - elasticsearch
 
   post_service_python:
     build:
@@ -35,7 +44,10 @@ services:
     ports:
       - "5001:5001"
     depends_on:
+      - postgres
       - mongo
+      - redis
+      - elasticsearch
 
   postgres:
     image: postgres:13
