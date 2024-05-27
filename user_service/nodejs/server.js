@@ -13,11 +13,13 @@ const pool = new Pool({
   host: process.env.POSTGRES_HOST || 'postgres',
   database: process.env.POSTGRES_DB || 'social_media_platform',
   password: process.env.POSTGRES_PASSWORD || 'postgres',
-  port: process.env.POSTGRES_PORT || 5432,
+  port: process.env.POSTGRES_PORT ? parseInt(process.env.POSTGRES_PORT) : 5432,
 });
 
 // MongoDB connection using mongoose
-const mongoUrl = `mongodb://${process.env.MONGO_HOST || 'mongo'}:${process.env.MONGO_PORT || 27017}/social_media_platform`;
+const mongoHost = process.env.MONGO_HOST || 'mongo';
+const mongoPort = process.env.MONGO_PORT ? parseInt(process.env.MONGO_PORT) : 27017;
+const mongoUrl = `mongodb://${mongoHost}:${mongoPort}/social_media_platform`;
 
 mongoose.connect(mongoUrl, {
   useNewUrlParser: true,

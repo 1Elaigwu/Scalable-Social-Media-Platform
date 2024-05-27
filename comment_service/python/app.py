@@ -1,8 +1,8 @@
-from flask import Flask
+from flask import Flask # type: ignore
 from routes import comment_routes
 import os
 import psycopg2
-from pymongo import MongoClient
+from pymongo import MongoClient # type: ignore
 
 app = Flask(__name__)
 app.register_blueprint(comment_routes, url_prefix='/comments')
