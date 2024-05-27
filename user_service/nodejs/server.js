@@ -1,25 +1,40 @@
 const express = require('express');
+const { Pool } = require('pg');
+const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const { MongoClient } = require('mongodb');
 const userRoutes = require('./routes/userRoutes');
 
 const app = express();
-const port = 3000;
-
-const url = 'mongodb://localhost:27017';
-const dbName = 'social_media_platform';
-const client = new MongoClient(url);
-
 app.use(bodyParser.json());
 
-client.connect(err => {
-  if (err) throw err;
-  console.log("Connected to MongoDB");
-  const db = client.db(dbName);
+// PostgreSQL connection
+const pool = new Pool({
+  user: process.env.POSTGRES_USER || 'postgres',
+  host: process.env.POSTGRES_HOST || 'postgres',
+  database: process.env.POSTGRES_DB || 'social_media_platform',
+  password: process.env.POSTGRES_PASSWORD || 'postgres',
+  port: process.env.POSTGRES_PORT || 5432,
+});
 
-  app.use('/users', userRoutes(db));
+// MongoDB connection using mongoose
+const mongoUrl = `mongodb://${process.env.MONGO_HOST || 'mongo'}:${process.env.MONGO_PORT || 27017}/social_media_platform`;
 
-  app.listen(port, () => {
-    console.log(`User service running on port ${port}`);
-  });
+mongoose.connect(mongoUrl, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+}).then(() => {
+  console.log('Connected to MongoDB using mongoose');
+}).catch(err => {
+  console.error('Failed to connect to MongoDB', err);
+  process.exit(1);
+});
+
+// Suppress the deprecation warning
+mongoose.set('strictQuery', false);
+
+app.use('/users', userRoutes);
+
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`User service running on port ${port}`);
 });
