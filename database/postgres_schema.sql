@@ -13,3 +13,5 @@ CREATE TABLE profiles (
     profile_picture VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+INSERT INTO users (username, email, password_hash) VALUES ('sample_user', 'sample_user@example.com', 'sample_hash');

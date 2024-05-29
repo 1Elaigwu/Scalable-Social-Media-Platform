@@ -1,6 +1,7 @@
 {
     "name": "post_service",
     "version": "1.0.0",
+    "description": "Post service for the social media platform",
     "main": "server.js",
     "scripts": {
         "start": "node server.js"

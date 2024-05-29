@@ -1,6 +1,7 @@
 {
     "name": "user_service",
     "version": "1.0.0",
+    "description": "User service for the social media platform",
     "main": "server.js",
     "scripts": {
         "start": "node server.js"

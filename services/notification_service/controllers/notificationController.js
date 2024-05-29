@@ -9,14 +9,21 @@ const getNotifications = async (req, res) => {
     const db = client.db(dbName);
     const notifications = await db.collection('notifications').find().toArray();
     res.json(notifications);
+  } catch (error) {
+    console.error('Error fetching notifications:', error);
+    res.status(500).json({ error: 'An error occurred while fetching notifications.' });
   } finally {
-    client.close();
+    await client.close();
   }
 };
 
 const createNotification = async (req, res) => {
   const client = new MongoClient(url);
   const { userId, message } = req.body;
+  if (!userId || !message) {
+    return res.status(400).json({ error: 'userId and message are required.' });
+  }
+
   try {
     await client.connect();
     const db = client.db(dbName);
@@ -26,8 +33,11 @@ const createNotification = async (req, res) => {
       createdAt: new Date()
     });
     res.status(201).json(result.ops[0]);
+  } catch (error) {
+    console.error('Error creating notification:', error);
+    res.status(500).json({ error: 'An error occurred while creating the notification.' });
   } finally {
-    client.close();
+    await client.close();
   }
 };
 

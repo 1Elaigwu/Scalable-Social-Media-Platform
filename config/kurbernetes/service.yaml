@@ -27,6 +27,32 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
+  name: comment-service
+spec:
+  selector:
+    app: comment-service
+  ports:
+    - protocol: TCP
+      port: 3002
+      targetPort: 3002
+  type: LoadBalancer
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: notification-service
+spec:
+  selector:
+    app: notification-service
+  ports:
+    - protocol: TCP
+      port: 3003
+      targetPort: 3003
+  type: LoadBalancer
+---
+apiVersion: v1
+kind: Service
+metadata:
   name: postgres-service
 spec:
   selector:
