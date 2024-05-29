@@ -1,5 +1,5 @@
 // Switch to the 'social_media_platform' database
-use social_media_platform;
+social_media_platform;
 
 // Create 'users' collection and index
 db.createCollection('users');

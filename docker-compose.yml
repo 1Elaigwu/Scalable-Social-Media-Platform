@@ -1,7 +1,27 @@
 services:
-  user_service_nodejs:
+  postgres:
+    image: postgres:13
+    container_name: socialmediaplatformdesign-postgres-1
+    environment:
+      POSTGRES_DB: social_media_platform
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  mongo:
+    image: mongo:5.0
+    container_name: socialmediaplatformdesign-mongo-1
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  user_service:
     build:
-      context: ./user_service/nodejs
+      context: ./services/user_service
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
@@ -17,27 +37,9 @@ services:
       MONGO_HOST: mongo
       MONGO_PORT: 27017
 
-  user_service_python:
+  post_service:
     build:
-      context: ./user_service/python
-      dockerfile: Dockerfile
-    ports:
-      - "5000:5000"
-    depends_on:
-      - postgres
-      - mongo
-    environment:
-      POSTGRES_HOST: postgres
-      POSTGRES_PORT: 5432
-      POSTGRES_DB: social_media_platform
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      MONGO_HOST: mongo
-      MONGO_PORT: 27017
-
-  post_service_nodejs:
-    build:
-      context: ./post_service/nodejs
+      context: ./services/post_service
       dockerfile: Dockerfile
     ports:
       - "3001:3001"
@@ -53,27 +55,9 @@ services:
       MONGO_HOST: mongo
       MONGO_PORT: 27017
 
-  post_service_python:
+  notification_service:
     build:
-      context: ./post_service/python
-      dockerfile: Dockerfile
-    ports:
-      - "5001:5001"
-    depends_on:
-      - postgres
-      - mongo
-    environment:
-      POSTGRES_HOST: postgres
-      POSTGRES_PORT: 5432
-      POSTGRES_DB: social_media_platform
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      MONGO_HOST: mongo
-      MONGO_PORT: 27017
-
-  notification_service_nodejs:
-    build:
-      context: ./notification_service/nodejs
+      context: ./services/notification_service
       dockerfile: Dockerfile
     ports:
       - "3003:3003"
@@ -89,27 +73,9 @@ services:
       MONGO_HOST: mongo
       MONGO_PORT: 27017
 
-  notification_service_python:
+  comment_service:
     build:
-      context: ./notification_service/python
-      dockerfile: Dockerfile
-    ports:
-      - "5003:5003"
-    depends_on:
-      - postgres
-      - mongo
-    environment:
-      POSTGRES_HOST: postgres
-      POSTGRES_PORT: 5432
-      POSTGRES_DB: social_media_platform
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      MONGO_HOST: mongo
-      MONGO_PORT: 27017
-
-  comment_service_nodejs:
-    build:
-      context: ./comment_service/nodejs
+      context: ./services/comment_service
       dockerfile: Dockerfile
     ports:
       - "3002:3002"
@@ -125,42 +91,10 @@ services:
       MONGO_HOST: mongo
       MONGO_PORT: 27017
 
-  comment_service_python:
-    build:
-      context: ./comment_service/python
-      dockerfile: Dockerfile
-    ports:
-      - "5002:5002"
-    depends_on:
-      - postgres
-      - mongo
-    environment:
-      POSTGRES_HOST: postgres
-      POSTGRES_PORT: 5432
-      POSTGRES_DB: social_media_platform
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      MONGO_HOST: mongo
-      MONGO_PORT: 27017
-
-  postgres:
-    image: postgres:13
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    environment:
-      POSTGRES_DB: social_media_platform
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-    ports:
-      - "5432:5432"
-
-  mongo:
-    image: mongo:4.4
-    volumes:
-      - mongo_data:/data/db
-    ports:
-      - "27017:27017"
-
 volumes:
   postgres_data:
   mongo_data:
+
+networks:
+  default:
+    name: socialmediaplatformdesign_default
