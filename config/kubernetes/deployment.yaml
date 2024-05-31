@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: user-service
-        image: your-registry/user-service:latest
+        image: localhost:5000/user-service:latest
         ports:
         - containerPort: 3000
 ---
@@ -34,7 +34,7 @@ spec:
     spec:
       containers:
       - name: post-service
-        image: your-registry/post-service:latest
+        image: localhost:5000/post-service:latest
         ports:
         - containerPort: 3001
 ---
@@ -54,7 +54,7 @@ spec:
     spec:
       containers:
       - name: comment-service
-        image: your-registry/comment-service:latest
+        image: localhost:5000/comment-service:latest
         ports:
         - containerPort: 3002
 ---
@@ -74,7 +74,7 @@ spec:
     spec:
       containers:
       - name: notification-service
-        image: your-registry/notification-service:latest
+        image: localhost:5000/notification-service:latest
         ports:
         - containerPort: 3003
 ---

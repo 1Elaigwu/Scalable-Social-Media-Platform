@@ -122,9 +122,18 @@ services:
       REDIS_HOST: redis
       REDIS_PORT: 6379
 
+  registry:
+    image: registry:2
+    container_name: socialmediaplatformdesign-registry
+    ports:
+      - "5000:5000"
+    volumes:
+      - registry_data:/var/lib/registry
+
 volumes:
   postgres_data:
   mongo_data:
+  registry_data:
 
 networks:
   default:

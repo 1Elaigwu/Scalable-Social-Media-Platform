@@ -111,3 +111,43 @@ For the live demo, use a local network setup or a hosting provider that accepts 
 
 ## Blog Post
 [Detailed Blog Post about the Project](#)
+
+
+# Scalable Social Media Platform
+
+## Project Overview
+- Brief description of the project and its objectives.
+
+## Architecture Design
+- Detailed architecture diagrams.
+- Explanation of each component.
+
+## Database Schema
+- SQL and NoSQL schema designs.
+
+## Microservices
+- Overview of each microservice and its responsibilities.
+- Code snippets for key functionalities.
+
+## Caching and Search
+- Implementation of Redis caching.
+- Integration with Elasticsearch.
+
+## CI/CD Pipeline
+- Description of the CI/CD setup.
+- Deployment scripts.
+
+## Monitoring and Logging
+- Monitoring setup with Prometheus and Grafana.
+- Logging setup with ELK stack.
+
+## Deployment
+- Deployment instructions.
+- Link to live demo.
+
+## Documentation
+- Setup instructions.
+- API documentation.
+
+## Future Enhancements
+- Potential improvements and new features.
