@@ -1,14 +1,3 @@
-# React App
-
-This is a React application.
-
-## Setup
-
-1. Install dependencies:
-
-```bash
-npm install
-
 # Scalable Social Media Platform
 
 ## Project Overview
@@ -117,7 +106,6 @@ social-media-platform/
 ├── config/
 │   ├── docker/
 │   │   ├── Dockerfile
-│   │   └── docker-compose.yml
 │   ├── kubernetes/
 │   │   ├── deployment.yaml
 │   │   └── service.yaml
@@ -179,18 +167,4 @@ social-media-platform/
 │   ├── setup_database.sh
 │   └── setup_elasticsearch.sh
 └── README.md
-
-├── frontend/
-│   ├── react/
-│   │   ├── public/
-│   │   │   └── index.html
-│   │   ├── src/
-│   │   │   ├── components/
-│   │   │   │   ├── UserComponent.js
-│   │   │   │   ├── PostComponent.js
-│   │   │   │   ├── CommentComponent.js
-│   │   │   │   ├── NotificationComponent.js
-│   │   │   ├── App.js
-│   │   │   ├── index.js
-│   │   ├── package.json
-│   │   ├── .env
+└──docker-compose.yml
