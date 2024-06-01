@@ -55,7 +55,7 @@ This project is a scalable social media platform designed to handle millions of 
 
 ## Architecture Design
 - **Microservices**: User Service, Post Service, Comment Service, Notification Service
-- **Databases**: PostgreSQL for user data, MongoDB for posts and comments, Redis for caching
+- **Databases**: PostgreSQL for user data, MongoDB for posts, comments and notifications, Redis for caching
 - **Search**: Elasticsearch for full-text search capabilities
 
 ## Key Features
@@ -113,41 +113,84 @@ For the live demo, use a local network setup or a hosting provider that accepts 
 [Detailed Blog Post about the Project](#)
 
 
-# Scalable Social Media Platform
+social-media-platform/
+├── config/
+│   ├── docker/
+│   │   ├── Dockerfile
+│   │   └── docker-compose.yml
+│   ├── kubernetes/
+│   │   ├── deployment.yaml
+│   │   └── service.yaml
+│   ├── postgresql/
+│   │   ├── postgresql.conf
+│   │   └── pg_hba.conf
+│   ├── mongodb/
+│   │   └── mongod.conf
+│   ├── redis/
+│   │   └── redis.conf
+│   └── elasticsearch/
+│       └── elasticsearch.yml
+├── database/
+│   ├── postgres_schema.sql
+│   └── mongodb_schema.js
+├── services/
+│   ├── user_service/
+│   │   ├── package.json
+│   │   ├── server.js
+│   │   ├── routes/
+│   │   │   └── userRoutes.js
+│   │   ├── controllers/
+│   │   │   └── userController.js
+│   │   └── models/
+│   │       └── userModel.js
+│   ├── post_service/
+│   │   ├── package.json
+│   │   ├── server.js
+│   │   ├── routes/
+│   │   │   └── postRoutes.js
+│   │   ├── controllers/
+│   │   │   └── postController.js
+│   │   └── models/
+│   │       └── postModel.js
+│   ├── comment_service/
+│   │   ├── package.json
+│   │   ├── server.js
+│   │   ├── routes/
+│   │   │   └── commentRoutes.js
+│   │   ├── controllers/
+│   │   │   └── commentController.js
+│   │   └── models/
+│   │       └── commentModel.js
+│   ├── notification_service/
+│   │   ├── package.json
+│   │   ├── server.js
+│   │   ├── routes/
+│   │   │   └── notificationRoutes.js
+│   │   ├── controllers/
+│   │   │   └── notificationController.js
+│   │   └── models/
+│   │       └── notificationModel.js
+├── caching/
+│   ├── redis_config.js
+├── search/
+│   ├── elasticsearch_config.js
+├── scripts/
+│   ├── deploy.sh
+│   ├── setup_database.sh
+│   └── setup_elasticsearch.sh
+└── README.md
 
-## Project Overview
-- Brief description of the project and its objectives.
-
-## Architecture Design
-- Detailed architecture diagrams.
-- Explanation of each component.
-
-## Database Schema
-- SQL and NoSQL schema designs.
-
-## Microservices
-- Overview of each microservice and its responsibilities.
-- Code snippets for key functionalities.
-
-## Caching and Search
-- Implementation of Redis caching.
-- Integration with Elasticsearch.
-
-## CI/CD Pipeline
-- Description of the CI/CD setup.
-- Deployment scripts.
-
-## Monitoring and Logging
-- Monitoring setup with Prometheus and Grafana.
-- Logging setup with ELK stack.
-
-## Deployment
-- Deployment instructions.
-- Link to live demo.
-
-## Documentation
-- Setup instructions.
-- API documentation.
-
-## Future Enhancements
-- Potential improvements and new features.
+├── frontend/
+│   ├── react/
+│   │   ├── public/
+│   │   │   └── index.html
+│   │   ├── src/
+│   │   │   ├── components/
+│   │   │   │   ├── UserComponent.js
+│   │   │   │   ├── PostComponent.js
+│   │   │   │   ├── CommentComponent.js
+│   │   │   │   ├── NotificationComponent.js
+│   │   │   ├── App.js
+│   │   │   ├── index.js
+│   │   ├── package.json
+│   │   ├── .env
