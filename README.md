@@ -9,12 +9,12 @@ The Scalable Social Media Platform is designed to efficiently handle a large use
 - [Key Features](docs/Key_Features.md)
 - [API Documentation](docs/API_Documentation.md)
 - [Architecture Design](docs/Architecture_Design.md)
-- [Technical Implenentation](docs/Technical_Implenentation.md)
+- [Technical Implementation](docs/Technical_Implementation.md)
 - [Setup Instructions](docs/Setup_Instructions.md)
 - [Configuration](docs/Configuration.md)
-- [Usage Examples](docs/usage_Examples.md)
-- [Performance](docs/performance.md)
-- [Blog Post](Blog_Post.md)
+- [Usage Examples](docs/Usage_Examples.md)
+- [Performance](docs/Performance.md)
+- [Blog Post](docs/Blog_Post.md)
 - [Limitations and Recommendations](docs/Limitations_and_Recommendations.md)
 
 ## Key Features
