@@ -17,6 +17,7 @@ The Scalable Social Media Platform is designed to efficiently handle a large use
 - **Notification Service API**: Endpoints for managing user notifications, such as sending and retrieving notifications.
 
 ## Architecture Design
+![Architecture Diagram](https://github.com/1Elaigwu/Scalable-Social-Media-Platform/blob/master/docs/system%20diagram.drawio.png?raw=true)
 ### Microservices
 The platform is built using a microservices architecture, with each service responsible for a specific aspect of the system. This approach allows for independent development, deployment, and scaling of each service. Here are the key microservices:
 
