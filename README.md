@@ -15,6 +15,7 @@ The Scalable Social Media Platform is designed to efficiently handle a large use
 - [Usage_Examples](docs/Usage_Examples.md)
 - [Performance](docs/Performance.md)
 - [Blog_Post](docs/Blog_Post.md)
+- [Project_Logs_During_Testing](docs/Project_Logs_During_Testing.txt)
 - [Limitations_and_Recommendations](docs/Limitations_and_Recommendations.md)
 
 ## Key Features
