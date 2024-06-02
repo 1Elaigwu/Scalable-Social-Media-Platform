@@ -2,35 +2,9 @@
 This document provides an in-depth look at the architecture of our scalable social media platform. The architecture is designed to handle high volumes of traffic and data efficiently, ensuring high performance, scalability, and reliability.
 
 ### Architecture Diagram
-+---------------------+        +------------------+       +--------------------+
-|     Load Balancer   | <----> |   Web Servers    | <-->  |   Application      |
-+---------------------+        +------------------+       +--------------------+
-                                                              |
-                   +---------------------+        +---------------------+
-                   |     User Service    |        |     Post Service     |
-                   +---------------------+        +---------------------+
-                             |                           |
-               +-------------+--------------+   +--------+--------+
-               |                            |   |                |
-+---------------------+           +---------------------+   +--------------------+
-|    PostgreSQL       |           |      MongoDB        |   |    Elasticsearch   |
-|    User Database    |           |    Post Database    |   |    Search Database |
-+---------------------+           +---------------------+   +--------------------+
-               |                            |   |                |
-               |                            |   |                |
-+---------------------+           +---------------------+   +--------------------+
-|     Redis Cache     |           |     Redis Cache     |   |    Redis Cache     |
-+---------------------+           +---------------------+   +--------------------+
-               |                            |   |                |
-+---------------------+           +---------------------+   +--------------------+
-| Master-Replica Setup|          | Master-Replica Setup|  | Master-Replica Setup|
-+---------------------+           +---------------------+   +--------------------+
-                             |                           |
-               +-------------+--------------+   +--------+--------+
-               |                            |   |                |
-+---------------------+           +---------------------+   +--------------------+
-|  Comment Service    |           | Notification Service|  | API Gateway        |
-+---------------------+           +---------------------+   +--------------------+
+Here is the architecture diagram:
+
+![Architecture Diagram](https://github.com/1Elaigwu/Scalable-Social-Media-Platform/blob/master/docs/system%20diagram.drawio.png?raw=true)
 
 Here's an explanation of the interactions depicted in the architecture design diagram:
 
