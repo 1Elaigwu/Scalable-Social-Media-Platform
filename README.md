@@ -30,8 +30,7 @@ The Scalable Social Media Platform is designed to efficiently handle a large use
 - **Comment Service API**: API endpoints for adding, retrieving, updating, and deleting comments on posts.
 - **Notification Service API**: Endpoints for managing user notifications, such as sending and retrieving notifications.
 
-## Architecture Design Overview
-
+## Architecture Design
 ### Microservices
 - **User Service**: Manages user authentication, profiles, and interactions.
 - **Post Service**: Handles the creation, retrieval, and management of posts.
@@ -225,3 +224,5 @@ Contributions to enhance the system or improve documentation are welcome. Please
 
 ## License
 This project is licensed under the MIT License. You are free to use, modify, and distribute the code as long as you include the original license in your distribution.
+
+This README.md file provides a comprehensive overview of the project, including its architecture, setup instructions, and key code snippets. It is designed to be clear and informative for developers, contributors, and stakeholders.
