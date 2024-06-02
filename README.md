@@ -3,6 +3,20 @@
 ## Overview
 The Scalable Social Media Platform is designed to efficiently handle a large user base and high volumes of data. It leverages modern technologies and architectural patterns to ensure scalability, performance, and reliability. The platform is built using a microservices architecture, with dedicated services for users, posts, comments, and notifications. Each service utilizes appropriate databases and technologies to optimize performance and scalability. The platform supports horizontal scaling, high availability, and robust security measures to protect user data and maintain system integrity.
 
+## Documentation
+
+- [Overview](docs/Overview.md)
+- [Key Features](docs/Key_Features.md)
+- [API Documentation](docs/API_Documentation.md)
+- [Architecture Design](docs/Architecture_Design.md)
+- [Technical Implenentation](docs/Technical_Implenentation.md)
+- [Setup Instructions](docs/Setup_Instructions.md)
+- [Configuration](docs/Configuration.md)
+- [Key Features](docs/Key_Features.md)
+- [Usage Examples](docs/usage_Examples.md)
+- [Performance](docs/performance.md)
+- [Limitations and Recommendaations](docs/Limitations_and_Recommendaations.md)
+
 ## Key Features
 - **Scalability**: Horizontal scaling with sharding and load balancing
 - **High Availability**: Master-slave and multi-master replication setups
@@ -10,110 +24,27 @@ The Scalable Social Media Platform is designed to efficiently handle a large use
 - **Security**: Data encryption and strict access control mechanisms
 
 
-## API Documentation
+## API Documentation Overview
 - **User Service API**: Endpoints for user management, including registration, login, profile updates, and user search.
 - **Post Service API**: API endpoints for creating, retrieving, updating, and deleting posts.
 - **Comment Service API**: API endpoints for adding, retrieving, updating, and deleting comments on posts.
 - **Notification Service API**: Endpoints for managing user notifications, such as sending and retrieving notifications.
 
-## Architecture Design
+## Architecture Design Overview
+
 ### Microservices
-The platform is built using a microservices architecture, with each service responsible for a specific aspect of the system. This approach allows for independent development, deployment, and scaling of each service. Here are the key microservices:
+- **User Service**: Manages user authentication, profiles, and interactions.
+- **Post Service**: Handles the creation, retrieval, and management of posts.
+- **Comment Service**: Manages comments on posts.
+- **Notification Service**: Handles the sending and retrieval of notifications for user activities.
 
-#### User Service
-**Responsibilities**:
+### Databases
+- **PostgreSQL**: Used for relational data storage, particularly for user information.
+- **MongoDB**: Utilized for storing posts, comments, and notifications due to its flexible schema capabilities.
+- **Redis**: Employed for caching frequently accessed data to improve performance.
 
-- Manage user registration, authentication, and profiles.
-- Handle user-related data and operations.
-
-**Interactions**:
-
-- Communicates with the Post Service to retrieve user-specific posts.
-- Interacts with the Notification Service to manage user notifications.
-
-#### Post Service
--**Responsibilities**:
-
-- Handle creation, retrieval, and management of posts.
-- Store and index post data for efficient querying.
-
-**Interactions**:
-
-- Connects with the User Service to get information about post authors.
-- Works with the Comment Service to manage comments on posts.
-
-#### Comment Service
--**Responsibilities**:
-
-- Manage creation, retrieval, and moderation of comments on posts.
-- Store and index comment data for efficient querying.
-
-**Interactions**:
-
-- Interfaces with the Post Service to associate comments with posts.
-- Communicates with the Notification Service to alert users about new comments.
-
-#### Notification Service
--**Responsibilities**:
-
-- Manage notifications for user activities (e.g., new comments, likes).
-- Store and deliver notifications in real-time or through batch processing.
-
-**Interactions**:
-
-- Works with the User Service to deliver notifications to the correct users.
-- Interacts with the Post and Comment Services to generate notifications based on user activities.
-
-## Databases
-The platform utilizes multiple databases, each chosen for its specific strengths, to handle different types of data efficiently.
-
-### PostgreSQL
-**Role**:
-
-- Used for storing structured data related to users, including authentication details and profiles.
-
-**Benefits**:
-
-- ACID compliance ensures data integrity and reliability.
-- Strong support for complex queries and transactions.
-
-### MongoDB
-**Role**:
-
-- Used for storing semi-structured data such as posts, comments, and notifications.
-
-**Benefits**:
-
-- Flexible schema design allows for rapid iteration and scaling.
-- High performance for read-heavy operations and horizontal scaling capabilities.
-
-### Redis
-**Role**:
-
-- Used for caching frequently accessed data to improve performance and reduce load on primary databases.
-
-**Benefits**:
-
-- Extremely fast read and write operations.
-- Supports various data structures such as strings, hashes, lists, and sets.
-
-## Search
-The platform incorporates powerful search capabilities to enable users to quickly find relevant content.
-
-### Elasticsearch
-**Role**:
-
-- Provides full-text search capabilities across posts, comments, and user profiles.
-
-**Integration**:
-
-- Indexes data from MongoDB for posts and comments, and from PostgreSQL for user profiles.
-- Real-time updates ensure search results are always up-to-date.
-
-**Benefits**:
-
-- Distributed nature allows for horizontal scaling and high availability.
-- Advanced search features such as filtering, faceting, and aggregations enhance user experience.
+### Search
+- **Elasticsearch**: Integrated for full-text search capabilities, enabling efficient and scalable search functionality across the platform.
 
 ## Technical Implementation
 
@@ -289,7 +220,8 @@ Example Response:
 ]
 ```
 
+## Contrubuion
+Contributions to enhance the system or improve documentation are welcome. Please submit pull requests or raise issues for discussion.
+
 ## License
 This project is licensed under the MIT License. You are free to use, modify, and distribute the code as long as you include the original license in your distribution.
-
-This README.md file provides a comprehensive overview of the project, including its architecture, setup instructions, and key code snippets. It is designed to be clear and informative for developers, contributors, and stakeholders.
