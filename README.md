@@ -221,7 +221,7 @@ Example Response:
   }
 ]
 ```
-## Contrubuion
+## Contribution
 Contributions to enhance the system or improve documentation are welcome. Please submit pull requests or raise issues for discussion.
 
 ## License
