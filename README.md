@@ -6,9 +6,9 @@ The Scalable Social Media Platform is designed to efficiently handle a large use
 ## Documentation
 
 - [Overview](docs/Overview.md)
-- [Key Features](docs/'Key_Features.md')
-- [API Documentation](docs/'API_Documentation.md')
-- [Architecture Design](docs/'Architecture_Design.md')
+- [Key Features](docs/Key_Features.md)
+- [API Documentation](docs/API_Documentation.md)
+- [Architecture Design](docs/Architecture_Design.md)
 - [Technical Implementation](docs/Technical_Implementation.md)
 - [Setup Instructions](docs/Setup_Instructions.md)
 - [Configuration](docs/Configuration.md)
