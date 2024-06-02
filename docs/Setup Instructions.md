@@ -9,7 +9,7 @@ git clone https://github.com/1Elaigwu/social-media-platform.git
 ```
 
 ### Install Dependencies:
-Navigate to each service directory (user_service, post_service, comment_service, notification_service) and 
+Navigate to each service directory (user_service, post_service, comment_service, and notification_service
 
 ### install dependencies:
 ```bash

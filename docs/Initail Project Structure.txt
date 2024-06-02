@@ -1,0 +1,68 @@
+social-media-platform/
+├── config/
+│   ├── docker/
+│   │   ├── Dockerfile
+│   ├── kubernetes/
+│   │   ├── deployment.yaml
+│   │   └── service.yaml
+│ 	│   └── secret.yaml
+│ 	└── elasticsearch-statefulset.yaml
+│   ├── postgresql/
+│   │   ├── postgresql.conf
+│   │   └── pg_hba.conf
+│   ├── mongodb/
+│   │   └── mongod.conf
+│   ├── redis/
+│   │   └── redis.conf
+│   └── elasticsearch/
+│       └── elasticsearch.yml
+├── database/
+│   ├── postgres_schema.sql
+│   └── mongodb_schema.js
+├── services/
+│   ├── user_service/
+│   │   ├── package.json
+│   │   ├── server.js
+│   │   ├── routes/
+│   │   │   └── userRoutes.js
+│   │   ├── controllers/
+│   │   │   └── userController.js
+│   │   └── models/
+│   │       └── userModel.js
+│   ├── post_service/
+│   │   ├── package.json
+│   │   ├── server.js
+│   │   ├── routes/
+│   │   │   └── postRoutes.js
+│   │   ├── controllers/
+│   │   │   └── postController.js
+│   │   └── models/
+│   │       └── postModel.js
+│   ├── comment_service/
+│   │   ├── package.json
+│   │   ├── server.js
+│   │   ├── routes/
+│   │   │   └── commentRoutes.js
+│   │   ├── controllers/
+│   │   │   └── commentController.js
+│   │   └── models/
+│   │       └── commentModel.js
+│   ├── notification_service/
+│   │   ├── package.json
+│   │   ├── server.js
+│   │   ├── routes/
+│   │   │   └── notificationRoutes.js
+│   │   ├── controllers/
+│   │   │   └── notificationController.js
+│   │   └── models/
+│   │       └── notificationModel.js
+├── caching/
+│   ├── redis_config.js
+├── search/
+│   ├── elasticsearch_config.js
+├── scripts/
+│   ├── deploy.sh
+│   ├── setup_database.sh
+│   └── setup_elasticsearch.sh
+└── README.md
+└──docker-compose.yml

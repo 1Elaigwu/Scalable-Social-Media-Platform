@@ -12,10 +12,10 @@ The Scalable Social Media Platform is designed to efficiently handle a large use
 - [Technical Implenentation](docs/Technical_Implenentation.md)
 - [Setup Instructions](docs/Setup_Instructions.md)
 - [Configuration](docs/Configuration.md)
-- [Key Features](docs/Key_Features.md)
 - [Usage Examples](docs/usage_Examples.md)
 - [Performance](docs/performance.md)
-- [Limitations and Recommendaations](docs/Limitations_and_Recommendaations.md)
+- [Blog Post](Blog_Post.md)
+- [Limitations and Recommendations](docs/Limitations_and_Recommendations.md)
 
 ## Key Features
 - **Scalability**: Horizontal scaling with sharding and load balancing
@@ -31,6 +31,8 @@ The Scalable Social Media Platform is designed to efficiently handle a large use
 - **Notification Service API**: Endpoints for managing user notifications, such as sending and retrieving notifications.
 
 ## Architecture Design
+![Architecture Diagram](https://github.com/1Elaigwu/Scalable-Social-Media-Platform/blob/master/docs/system%20diagram.drawio.png?raw=true)
+
 ### Microservices
 - **User Service**: Manages user authentication, profiles, and interactions.
 - **Post Service**: Handles the creation, retrieval, and management of posts.
@@ -218,7 +220,6 @@ Example Response:
   }
 ]
 ```
-
 ## Contrubuion
 Contributions to enhance the system or improve documentation are welcome. Please submit pull requests or raise issues for discussion.
 
